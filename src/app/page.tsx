@@ -1,130 +1,32 @@
-import Image from 'next/image';
 import Link from 'next/link';
 
 import { Container } from '@/components/container';
 import { Button } from '@/components/ui/button';
-import { PricingSection } from '@/features/pricing/components/pricing-section';
 
 export default async function HomePage() {
   return (
     <div className='flex flex-col gap-8 lg:gap-32'>
-      <HeroSection />
-      <ExamplesSection />
-      <PricingSection />
-    </div>
-  );
-}
-
-function HeroSection() {
-  return (
-    <section className='relative overflow-hidden lg:overflow-visible'>
-      <Container className='relative rounded-lg bg-black py-20 lg:py-[140px]'>
-        <div className='relative z-10 flex flex-col gap-5 lg:max-w-xl lg:pl-8'>
-          <div className='w-fit rounded-full bg-gradient-to-r from-[#616571] via-[#7782A9] to-[#826674] px-4 py-1 '>
-            <span className='font-alt text-sm font-semibold text-black mix-blend-soft-light'>
-              Generate banners with DALL·E
-            </span>
+      <section className='py-10 lg:py-16'>
+        <Container className='rounded-lg bg-black px-6 py-10 lg:px-10 lg:py-16'>
+          <div className='flex flex-col gap-4 lg:max-w-2xl'>
+            <h1>字幕文件解析</h1>
+            <p className='text-sm text-zinc-400'>
+              拖动或选择一个字幕文件（.srt / .vtt），解析后按列表展示每条字幕。文件内容只在本地解析。
+            </p>
+            <div className='flex flex-wrap items-center gap-3'>
+              <Button asChild variant='sexy'>
+                <Link href='/subtitles'>开始使用</Link>
+              </Button>
+              <Button asChild variant='secondary'>
+                <Link href='/pricing'>查看订阅</Link>
+              </Button>
+            </div>
           </div>
-          <h1>Instantly craft stunning Twitter banners.</h1>
-          <Button asChild variant='sexy'>
-            <Link href='/signup'>Get started for free</Link>
-          </Button>
-        </div>
-      </Container>
-      <Image
-        src='/hero-shape.png'
-        width={867}
-        height={790}
-        alt=''
-        className='absolute right-0 top-0 rounded-tr-lg'
-        priority
-        quality={100}
-      />
-    </section>
-  );
-}
-
-function ExamplesSection() {
-  return (
-    <section className='flex flex-col gap-4 overflow-hidden rounded-lg bg-black py-8'>
-      <div className='flex justify-center gap-4'>
-        <Image
-          className='flex-shrink-0'
-          src='/example1.png'
-          width={600}
-          height={200}
-          alt='Example of a generated banner'
-          quality={100}
-        />
-        <Image
-          className='flex-shrink-0'
-          src='/example2.png'
-          width={600}
-          height={200}
-          alt='Example of a generated banner'
-          quality={100}
-        />
-        <Image
-          className='flex-shrink-0'
-          src='/example3.png'
-          width={600}
-          height={200}
-          alt='Example of a generated banner'
-          quality={100}
-        />
-      </div>
-      <div className='flex gap-4'>
-        <Image
-          className='flex-shrink-0'
-          src='/example4.png'
-          width={600}
-          height={200}
-          alt='Example of a generated banner'
-          quality={100}
-        />
-        <Image
-          className='flex-shrink-0'
-          src='/example5.png'
-          width={600}
-          height={200}
-          alt='Example of a generated banner'
-          quality={100}
-        />
-        <Image
-          className='flex-shrink-0'
-          src='/example6.png'
-          width={600}
-          height={200}
-          alt='Example of a generated banner'
-          quality={100}
-        />
-      </div>
-      <div className='flex justify-center gap-4'>
-        <Image
-          className='flex-shrink-0'
-          src='/example7.png'
-          width={600}
-          height={200}
-          alt='Example of a generated banner'
-          quality={100}
-        />
-        <Image
-          className='flex-shrink-0'
-          src='/example8.png'
-          width={600}
-          height={200}
-          alt='Example of a generated banner'
-          quality={100}
-        />
-        <Image
-          className='flex-shrink-0'
-          src='/example9.png'
-          width={600}
-          height={200}
-          alt='Example of a generated banner'
-          quality={100}
-        />
-      </div>
-    </section>
+        </Container>
+      </section>
+      {/* <HeroSection />
+      <ExamplesSection />
+      <PricingSection /> */}
+    </div>
   );
 }
